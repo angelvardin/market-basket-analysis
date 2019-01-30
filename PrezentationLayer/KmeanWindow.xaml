@@ -1,0 +1,35 @@
+﻿<Window x:Class="PrezentationLayer.KmeanWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        Title="K-means Clustering" Height="692" Width="1299.942">
+    <Grid Margin="10,10,2,6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="962*"/>
+            <ColumnDefinition Width="719*"/>
+        </Grid.ColumnDefinitions>
+        <chartingToolkit:Chart x:Name="PointsChart"
+                                       Title="K-Means Algorithm"
+                                       BorderThickness="0" Margin="34,50,106,244">
+            <chartingToolkit:Chart.Axes>
+                <chartingToolkit:LinearAxis Orientation="Y" />
+                <chartingToolkit:LinearAxis Orientation="X" />
+            </chartingToolkit:Chart.Axes>
+        </chartingToolkit:Chart>
+        <toolkit:IntegerUpDown x:Name="ClusterCountNumericUpDown" Value="2" Increment="1" Minimum="2" Maximum="10" Margin="0,421,323,0" Height="32" VerticalAlignment="Top" HorizontalAlignment="Right" Width="74" />
+        <toolkit:IntegerUpDown x:Name="RandomRestarts" Value="2" Increment="1" Minimum="2" Maximum="10" Margin="0,421,90,0" Height="32" VerticalAlignment="Top" HorizontalAlignment="Right" Width="74" />
+        <Button x:Name="DoKmean" Content="Cluster" HorizontalAlignment="Left" Height="37" Margin="74,419,0,0" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.495,0.946" Click="DoKmean_Click"/>
+        <Label HorizontalAlignment="Left" Height="37" Margin="201,419,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.15">
+            <Label Content="Number Clusters:" RenderTransformOrigin="0.526,0.616"/>
+        </Label>
+        <Button Content="Product in clusters" HorizontalAlignment="Left" Height="38" Margin="74,491,0,0" VerticalAlignment="Top" Width="109" Click="Button_Click"/>
+        <chartingToolkit:Chart x:Name="PrizeChart" Margin="10,113,130,288" Background="LightSteelBlue" Grid.Column="1"/>
+        <Label Content="Random Restarts:" HorizontalAlignment="Left" Margin="450,424,0,0" VerticalAlignment="Top"/>
+        <StackPanel HorizontalAlignment="Left" Height="38" Margin="261,491,0,0" VerticalAlignment="Top" Width="255">
+            <RadioButton x:Name="FirstVariant" GroupName="MCSites" Content="First Variant" Checked="FirstVariant_Checked"/>
+            <RadioButton x:Name="SecondVariant" GroupName="MCSites" Content="Second Variant" Checked="SecondVariant_Checked"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

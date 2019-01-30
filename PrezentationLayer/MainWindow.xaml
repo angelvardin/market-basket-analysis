@@ -1,0 +1,11 @@
+﻿<Window x:Class="PrezentationLayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        Title="Market Basket Analysis" Height="163.75" Width="319.5">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+        <Button Name="Kmeanbtn" Content="K-means clustering" HorizontalAlignment="Left" Margin="31,34,0,0" Width="108" Height="52" VerticalAlignment="Top" Click="Kmeanbtn_Click"/>
+        <Button x:Name="Apriorybtn" Content="Apriory" HorizontalAlignment="Left" Margin="176,34,0,0" VerticalAlignment="Top" Width="108" Height="52" Click="Apriorybtn_Click"/>
+
+    </Grid>
+</Window>
